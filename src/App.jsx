@@ -1,14 +1,18 @@
-import { useState } from 'react'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Register from './Authentication/Register'
+import HomePage from './Theme/homePage'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Register/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/homePage" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   )
 }
 
